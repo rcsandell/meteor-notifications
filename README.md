@@ -240,9 +240,18 @@ Gets the class containing the color for the notification
 
 * **String** *notificationType*
 
-## remove()
+## remove(selector)
 
-Removes the notifications matching the query selector
+Removes the notifications matching the mongo query selector
+
+``` javascript
+// Create Notification
+var notificationId = Notifications.success('title', 'message');
+// Remove exisiting notification sometime between 0-5 seconds
+Meteor.setTimeout( function () {
+    Notifications.remove({ _id: notificationId });
+}, (Math.Random() | 0) * 5000 );
+```
 
 ### Params:
 
