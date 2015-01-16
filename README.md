@@ -244,6 +244,12 @@ Gets the class containing the color for the notification
 
 Removes the notifications matching the mongo query selector
 
+### Params:
+
+* **selector** Mongo query selector
+
+**Example:**
+
 ``` javascript
 // Create Notification
 var notificationId = Notifications.success('title', 'message');
@@ -252,10 +258,6 @@ Meteor.setTimeout( function () {
     Notifications.remove({ _id: notificationId });
 }, Math.Random() * 5000 );
 ```
-
-### Params:
-
-* **selector** Mongo query selector
 
 ## TYPES
 
